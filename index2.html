@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympic Host Cities and Country Stats</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        #map { height: 500px; width: 50%; float: left; }
+        #chartContainer { height: 800px; width: 50%; float: right; }
+        canvas { width: 100%; height: 100%; }
+        
+        /* Styles pour le bouton et la boîte de dialogue modale */
+        .info-button {
+            font-size: 20px;
+            cursor: pointer;
+            position: relative;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+        }
+        
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; /* Assurez-vous que le z-index est élevé */
+            padding-top: 60px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+    
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+        }
+    
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+    
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="chartContainer">
+        <button class="info-button" onclick="openModal()">ℹ️</button>
+        <select id="dataSelect" onchange="updateChart()">
+            <option value="PIB per capita">PIB per capita</option>
+            <option value="Gini coefficient">Gini coefficient</option>
+            <option value="Human Development Index">Human Development Index</option>
+        </select>
+        <button id="resetButton" onclick="resetChart()">Réinitialiser</button>
+        <canvas id="chartCanvas"></canvas>
+    </div>
+
+    <!-- Modal HTML -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Informations sur les Indicateurs</h2>
+            <p><strong>PIB per capita :</strong> Le PIB par habitant est le produit intérieur brut d'un pays divisé par sa population. Il est utilisé pour mesurer la richesse relative des pays.</p>
+            <p><strong>Gini coefficient :</strong> Le coefficient de Gini est une mesure de la répartition des revenus d'un pays. Il varie de 0 à 1, où 0 signifie une égalité parfaite et 1 une inégalité maximale.</p>
+            <p><strong>Human Development Index (HDI) :</strong> L'HDI est un indice composite mesurant le développement humain dans trois dimensions : la santé (espérance de vie), l'éducation (durée moyenne de scolarisation) et le niveau de vie (PIB par habitant).</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
