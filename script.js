@@ -27,9 +27,9 @@ const cityCoords = {
     "Melbourne": [-37.814, 144.96332]
 };
 
-let chart;  // script.js instance
-let cityDetails = {}; // Store city details globally
-let countryData = {}; // Store country data globally
+let chart;
+let cityDetails = {};
+let countryData = {}; 
 
 document.addEventListener('DOMContentLoaded', async function() {
     // Initialise et configure la carte
@@ -59,22 +59,30 @@ document.addEventListener('DOMContentLoaded', async function() {
 });
 
 // Fonction pour ouvrir la boîte de dialogue modale
-function openModal() {
-    document.getElementById('infoModal').style.display = 'block';
-}
+function openInfoModal() {
+    const modal = document.getElementById("infoModal");
+    modal.style.display = "block";
 
-// Fonction pour fermer la boîte de dialogue modale
-function closeModal() {
-    document.getElementById('infoModal').style.display = 'none';
-}
+    // Ajouter l'événement pour fermer la modale en cliquant sur la croix
+    const closeBtn = modal.querySelector(".close");
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
 
-// Fermer la boîte de dialogue si l'utilisateur clique en dehors
-window.onclick = function(event) {
-    const modal = document.getElementById('infoModal');
-    if (event.target === modal) {
-        modal.style.display = 'none';
+    // Ajouter l'événement pour fermer la modale en cliquant en dehors de celle-ci
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     }
 }
+
+// Fonction pour fermer la modale d'information
+function closeInfoModal() {
+    const modal = document.getElementById("infoModal");
+    modal.style.display = "none";
+}
+
 function initMap() {
     // Définit les limites de la carte pour empêcher la vue répétée
     const southWest = L.latLng(-60, -180),
@@ -110,7 +118,6 @@ function addLegend(map) {
                     left: 30px;
                     background: white;
                     padding: 7px;
-                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
                     border-radius: 5px;
                     line-height: 1.5;
                     font-size: 12px;
@@ -222,8 +229,26 @@ function initializeChart() {
         },
         options: {
             scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: {
+                        font: {
+                            family: 'Arial', // Type de texte
+                            size: 12 // Taille du texte
+                        },
+                        color: '#333' // Couleur du texte
+                    }
+                },
+                
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    ticks: {
+                        font: {
+                            family: 'Arial', // Type de texte
+                            size: 12 // Taille du texte
+                        },
+                        color: '#333' // Couleur du texte
+                    }
                 }
             },
             plugins: {
