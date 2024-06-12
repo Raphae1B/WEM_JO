@@ -56,6 +56,55 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        svg {
+  margin: 40px;
+}
+
+.chart-container .chart-title {
+  font-size: 18px;
+  fill: #d3d3d3;
+  font-weight: bold;
+  text-anchor: middle;
+  dominant-baseline: center;
+}
+
+.chart-container .current-date {
+  font-size: 45px;
+  fill: #d3d3d3;
+  text-anchor: end;
+}
+
+.y-axis text,
+.y-axis .domain,
+.x-axis .domain {
+  display: none;
+}
+
+.x-axis .tick line {
+  color: #d3d3d3;
+}
+
+.x-axis .tick text {
+  color: #d3d3d3;
+}
+
+.columns .column-container .column-rect {
+  fill: rgb(223, 181, 15);
+}
+
+.columns .column-container .column-title {
+  text-anchor: end;
+  fill: white;
+  dominant-baseline: middle;
+  font-size: 14px;
+}
+
+.columns .column-container .column-value {
+  dominant-baseline: middle;
+  font-size: 14px;
+}
+
     </style>
 </head>
 <body>
@@ -81,10 +130,30 @@
             <p><strong>Human Development Index (HDI) :</strong> L'HDI est un indice composite mesurant le développement humain dans trois dimensions : la santé (espérance de vie), l'éducation (durée moyenne de scolarisation) et le niveau de vie (PIB par habitant).</p>
         </div>
     </div>
+    
+    <svg id="bar-chart-race">
+        <g class="chart-container">
+          <text class="chart-title"></text>
+          <g class="x-axis"></g>
+          <g class="y-axis"></g>
+          <g class="columns"></g>
+          <text class="current-date"></text>
+        </g>
+      </svg>
+      <button id="bar-chart-race-control">Stop</button>
+
+    <!-- <button id="test">Click</button> -->
+
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="script.js"></script>
+    <!-- <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-time-format.v3.min.js"></script> -->
+    <scritp src="https://cdn.jsdelivr.net/npm/d3@7/+esm"></scritp>
+ <!-- <script type="module" src="governement.js"></script> -->
+    <script type="module" src="index.js"></script>
+    
 </body>
 </html>
 
