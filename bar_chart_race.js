@@ -32,9 +32,6 @@ export function BarChartRace(chartId, extendedSettings) {
 
   const yAxisScale = d3.scaleBand().range([0, chartSettings.innerHeight]).padding(chartSettings.columnPadding);
 
-  // const colorScale = d3.scaleOrdinal(d3.sch)
-  // const colorScale = d3.scaleLinear().domain([1, 15]).range(['red', 'orange']);
-
   const colorScale = d3
     .scaleOrdinal()
     .domain([])
@@ -70,27 +67,6 @@ export function BarChartRace(chartId, extendedSettings) {
 
     colorScale.domain(limitedDataSet.map((d) => d.name));
 
-    // const colorScale = d3
-    //   .scaleOrdinal()
-    //   .domain(d3.range(15)) // Adjust this if you have more or fewer than 15 categories
-    //   .range([
-    //     'gold',
-    //     'blue',
-    //     'green',
-    //     'yellow',
-    //     'black',
-    //     'grey',
-    //     'darkgreen',
-    //     'pink',
-    //     'brown',
-    //     'slateblue',
-    //     'lightgrey',
-    //     'orange',
-    //     'darkblue',
-    //     'tomato',
-    //     'lightgreen',
-    //   ]);
-
     chartContainer.select('.current-date').text(currentDate);
 
     // xAxisScale.domain([0, dataSetDescendingOrder[0].value]);
@@ -101,8 +77,6 @@ export function BarChartRace(chartId, extendedSettings) {
     xAxisContainer.transition(transition).call(d3.axisTop(xAxisScale).ticks(ticksInXAxis).tickSize(-innerHeight));
 
     yAxisContainer.transition(transition).call(d3.axisLeft(yAxisScale).tickSize(0));
-
-    // The general update Pattern in d3.js
 
     // Data Binding
     const barGroups = chartContainer
@@ -280,6 +254,13 @@ export function BarChartRace(chartId, extendedSettings) {
 
     return this;
   }
+  function reset() {
+    currentDataSetIndex = 0;
+    elapsedTime = chartSettings.duration;
+    d3.select('button#bar-chart-race-control').text('Stop');
+    render();
+    return this;
+  }
 
   return {
     addDataset,
@@ -288,5 +269,6 @@ export function BarChartRace(chartId, extendedSettings) {
     setTitle,
     start,
     stop,
+    reset,
   };
 }

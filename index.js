@@ -2,11 +2,18 @@
 import { generateDataSets } from './DataGenerator.js';
 import { BarChartRace } from './bar_chart_race.js';
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7/+esm';
+import { ScatterPlot } from './TotalPopulation_medals.js';
+import { ColdWarChart } from './cold_war.js';
 
 //import { select as d3Select } from 'd3';
 
 async function loadDataMedals() {
-  const response = await fetch('./output_medal.json');
+  const response = await fetch('./data_medal.json');
+  return await response.json();
+}
+
+async function loadDataCountry() {
+  const response = await fetch('./data_country.json');
   return await response.json();
 }
 
@@ -59,28 +66,59 @@ async function getMedalByYear() {
   return medalByYear;
 }
 
+async function getCountryPopMedal() {
+  const countries = await loadDataCountry();
+  const medals = await loadDataMedals();
+  const countryPopMedal = [];
+  countries.forEach((countrydata) => {
+    const countryMedals = medals.find((medal) => medal.Country === countrydata['Country'] && medal.Year === 2020);
+    countryPopMedal.push({
+      country: countrydata['Country'],
+      population: countrydata['Total population'],
+      medals: countryMedals ? countryMedals.Total : 0,
+    });
+  });
+  return countryPopMedal;
+}
+
 getMedalByYear().then((data) => {
-  // console.log('ici', data);
-  // const dataTopTen = data.map((element) => {
-  //   return {
-  //     ...element,
-  //     dataSet: element.dataSet.slice(0, 10),
-  //   };
-  // });
-  // generateDataSets({ size: 5 });
-  const myChart = new BarChartRace('bar-chart-race');
-  myChart.setTitle('Olympic medals by country over the years').addDatasets(data).render();
-  d3.select('#bar-chart-race-control').on('click', function () {
-    console.log('salut');
-    if (this.innerHTML === 'Stop') {
-      this.innerHTML = 'Resume';
-      myChart.stop();
-    } else if (this.innerHTML === 'Resume') {
-      this.innerHTML = 'Stop';
-      myChart.start();
-    } else {
-      this.innerHTML = 'Stop';
-      myChart.render();
-    }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        getMedalByYear().then((data) => {
+          const myChart = new BarChartRace('bar-chart-race');
+          myChart.setTitle('Olympic medals by country over the years').addDatasets(data).render();
+          d3.select('#bar-chart-race-control').on('click', function () {
+            if (this.innerHTML === 'Stop') {
+              this.innerHTML = 'Resume';
+              myChart.stop();
+            } else if (this.innerHTML === 'Resume') {
+              this.innerHTML = 'Stop';
+              myChart.start();
+            } else {
+              this.innerHTML = 'Stop';
+              myChart.addDatasets(data).render();
+            }
+          });
+
+          d3.select('#chart-restart').on('click', function () {
+            myChart.reset();
+          });
+        });
+        observer.unobserve(entry.target); // Arrêter d'observer une fois que le conteneur est visible et l'animation a démarré
+      }
+    });
+  });
+  const chartContainerElement = document.getElementById('bar-chart-race');
+  observer.observe(chartContainerElement);
+});
+
+getCountryPopMedal().then((data) => {
+  const scatter = new ScatterPlot('scatter-plot', data);
+});
+
+loadDataMedals().then((medals) => {
+  loadDataCountry().then((countries) => {
+    const cold_war = new ColdWarChart(countries, medals);
   });
 });
