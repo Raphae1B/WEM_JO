@@ -1,5 +1,5 @@
 //import './style.css';
-import { generateDataSets } from './DataGenerator.js';
+// import { generateDataSets } from './DataGenerator.js';
 import { BarChartRace } from './bar_chart_race.js';
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7/+esm';
 import { ScatterPlot } from './TotalPopulation_medals.js';
@@ -105,7 +105,7 @@ getMedalByYear().then((data) => {
             myChart.reset();
           });
         });
-        observer.unobserve(entry.target); // Arrêter d'observer une fois que le conteneur est visible et l'animation a démarré
+        observer.unobserve(entry.target);
       }
     });
   });
