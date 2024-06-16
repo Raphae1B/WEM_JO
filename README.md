@@ -3,9 +3,10 @@
 2. Faire la commande : python -m http.server 8000
 3. ouvrir google chrome (par exemple) et coller dans la barre des recherches : http://localhost:8000/index.html
 4. Profitez des visualisations en scrollant
-(- pour la visulalisation sur les disciplines et médailles, vous pouvez voir le nombre de médailles obtenu sur toutes les années ou cliquer sur une année spécifique. pour réilinitialiser, cliquer à l'intérieur du graphe des disciplines.
+____
+- pour la visulalisation sur les disciplines et médailles, vous pouvez voir le nombre de médailles obtenu sur toutes les années ou cliquer sur une année spécifique. pour réilinitialiser, cliquer à l'intérieur du graphe des disciplines.
 - pour la visualisation sur les pays hôtes, utiliser le + et le - en haut à gauche de la carte pour zoomer et en cliquant sur l'une des villes, le barre graphe va être modifier)
-
+____
 # Analyse des performances sportives aux jeux olympiques 
 ## Contexte 
 Avec l'approche des Jeux Olympiques d'été de cette année, un événement mondial qui se tient tous les quatre ans depuis 1896, notre projet s'est orienté vers une analyse approfondie de ce sujet. Nous avons choisi de nous concentrer sur les jeux d'été en raison de leur couverture médiatique plus importante et du nombre de pays participants, nettement supérieur à celui des jeux d'hiver (206 délégations en été 2021 contre 91 en hiver 2022). Cette décision nous offre l'accès à une plus grande diversité de données, ainsi qu'à un nombre d'épreuves considérablement plus élevé (339 épreuves en été 2021 contre 109 en hiver 2022).
@@ -14,29 +15,29 @@ Notre objectif principal est d'explorer la relation entre le nombre de médaille
 ## Données (sources, quantité, évtl. pré-traitement, description) 
 Les données de notre projet se divise en deux principales catégories : les caractéristiques des pays et les données relatives aux Jeux Olympiques. Pour le premier, nous avons utilisé Wikipedia comme source principale, en exploitant la structure HTML globalement uniforme des pages pour faciliter le scraping. Les informations pertinentes ont été extraites des infoboxes sur le côté droit de chaque page, incluant : 
 
-Nom du pays : Essentiel pour référencer et organiser les données de manière cohérente. 
+- Nom du pays : Essentiel pour référencer et organiser les données de manière cohérente. 
 
-Surface total et proportion de surface d’eau : Aide à comprendre les défis et opportunités liés à la taille du pays et à sa gestion des ressources en eau. 
+- Surface total et proportion de surface d’eau : Aide à comprendre les défis et opportunités liés à la taille du pays et à sa gestion des ressources en eau. 
 
-Population totale : Cruciale pour évaluer la densité démographique. 
+- Population totale : Cruciale pour évaluer la densité démographique. 
 
-Pib par habitant : Permet d’évaluer le niveau économique et la prospérité relative des habitants. 
+- Pib par habitant : Permet d’évaluer le niveau économique et la prospérité relative des habitants. 
 
-Coefficent de gini : Fournit une mesure de l'inégalité de revenu au sein d'une économie, crucial pour évaluer l'équité sociale et la stabilité. 
+- Coefficent de gini : Fournit une mesure de l'inégalité de revenu au sein d'une économie, crucial pour évaluer l'équité sociale et la stabilité. 
 
-Indice de développement humain : Evalue la santé, l'éducation et le revenu, donnant une image globale du niveau de développement humain. 
+- Indice de développement humain : Evalue la santé, l'éducation et le revenu, donnant une image globale du niveau de développement humain. 
 
-Monnaie : Permettre potentiellement de faire des analyses économiques mais demande des données supplémentaires. 
+- Monnaie : Permettre potentiellement de faire des analyses économiques mais demande des données supplémentaires. 
 
-Type de gouvernement : Impacte la politique intérieure et la stabilité nationale. 
+- Type de gouvernement : Impacte la politique intérieure et la stabilité nationale. 
 
 Pour les données sur les Jeux Olympiques, nous avions initialement envisagé de continuer avec Wikipedia. Cependant, nous avons rapidement rencontré des difficultés liées aux variations des structures HTML sur les pages dédiées à chaque événement olympique. Ces différences, couvrant les éditions de 1896 à 2020, soit un total de 32 pages Wikipedia potentiellement distinctes, compliquaient considérablement la tâche. Nous avons donc été contraints de chercher une autre source. En explorant d'autres options, nous avons tenté d'utiliser le site officiel des Jeux Olympiques, mais les conditions d'utilisation interdisaient le scraping. Après des recherches supplémentaires, nous avons découvert Olympedia, un site dédié à l'histoire et aux statistiques des Jeux Olympiques, sur lequel le scraping était possible. Nous avons donc choisi de récupérer les données en trois catégories distinctes : 
 
-Informations sur les pays hôtes à travers les années, features : année, ville et pays hôte. 
+- Informations sur les pays hôtes à travers les années, features : année, ville et pays hôte. 
 
-Informations sur le nombre de médailles obtenues par pays et par événement, features : année, pays, médailles d'or, d'argent, de bronze et total. 
+- Informations sur le nombre de médailles obtenues par pays et par événement, features : année, pays, médailles d'or, d'argent, de bronze et total. 
 
-Informations sur les disciplines à travers les différents événements, features : année et disciplines. 
+- Informations sur les disciplines à travers les différents événements, features : année et disciplines. 
 
 Nous avons également vérifié que nous avions le droit d'utiliser ces données. Les conditions d'utilisation permettaient le partage du contenu olympique uniquement à des fins personnelles et non commerciales, ce qui correspondait à nos besoins.  
 
@@ -72,49 +73,51 @@ Pour la visualisation des données, Chart.js et D3.js ont été choisis pour leu
 ## Fonctionnalités 
 Voici les principales fonctionnalités envisagées :  
 
-Visualisation dynamique des données : Graphiques animé montrant les performances des pays les plus médaillés aux Jeux Olympiques au fil des années.  
+- Visualisation dynamique des données : Graphiques animé montrant les performances des pays les plus médaillés aux Jeux Olympiques au fil des années.  
 
-Filtrage selon différents critères : Possibilité de filtrer les données selon l'année de l'événement, les disciplines présentes et le nombre de médailles obtenues par les 15 meilleurs pays, permettant des analyses ciblées selon des critères spécifiques. 
+- Filtrage selon différents critères : Possibilité de filtrer les données selon l'année de l'événement, les disciplines présentes et le nombre de médailles obtenues par les 15 meilleurs pays, permettant des analyses ciblées selon des critères spécifiques. 
 
-Illustration des disciplines : Pop-ups avec des images explicatives lorsqu'on clique sur une discipline, rendant l'information plus accessible, surtout pour les disciplines moins connues. 
+- Illustration des disciplines : Pop-ups avec des images explicatives lorsqu'on clique sur une discipline, rendant l'information plus accessible, surtout pour les disciplines moins connues. 
 
-Comparaison entre pays : Un outil spécialisé pour comparer les performances entre les pays de l'Est et de l'Ouest durant la Guerre froide, offrant une perspective historique et politique unique. 
+- Comparaison entre pays : Un outil spécialisé pour comparer les performances entre les pays de l'Est et de l'Ouest durant la Guerre froide, offrant une perspective historique et politique unique. 
 
-Carte interactive avec les villes hôtes : Une carte du monde interactive montrant les villes qui ont accueilli les Jeux, avec des cercles proportionnels au nombre d'événements organisés. Un graphique à barres associé, affichant le PIB, le coefficient de Gini, et l'IDH, aidera à explorer les tendances et similitudes dans le choix des pays organisateurs. 
+- Carte interactive avec les villes hôtes : Une carte du monde interactive montrant les villes qui ont accueilli les Jeux, avec des cercles proportionnels au nombre d'événements organisés. Un graphique à barres associé, affichant le PIB, le coefficient de Gini, et l'IDH, aidera à explorer les tendances et similitudes dans le choix des pays organisateurs. 
 
-Visualisation des caractéristiques socio-économiques des 20 pays les plus médaillés en 2020 
+- Visualisation des caractéristiques socio-économiques des 20 pays les plus médaillés en 2020 
 ## Techniques, algorithmes et outils utilisés 
 Pour automatiser la collecte des données nécessaires à notre projet sur les performances olympiques et les indicateurs socio-économiques, nous avons utilisé la bibliothèque Python Scrapy pour effectuer le scraping des sites Wikipedia et Olympedia. Cette méthode nous a permis d'extraire efficacement les informations requises, qui ont ensuite été structurées au format JSON pour un traitement ultérieur. Une fois les données collectées, le nettoyage et la transformation ont été réalisés à l'aide de Pandas, un puissant outil de manipulation de données en Python, tandis que Matplotlib nous a servi à visualiser la distribution des données et détecter d'éventuelles anomalies. Pour la présentation des résultats, nous avons opté pour D3.js, qui offre des capacités étendues pour des visualisations interactives et complexes, Chart.js pour des graphiques intuitifs, et Leaflet.js pour la cartographie interactive, enrichissant ainsi notre application web avec des représentations graphiques dynamiques et des cartes détaillées. Ces outils ont ensemble facilité l'analyse statistique et l'amélioration de la compréhension des tendances et des corrélations au sein des données. 
 ## Planification, organisation et suivi répartition du travail (diagramme de Gantt) 
 Voici ce qui était prévu dans le cahier des charges : 
 
-Développement des scripts de scraping pour extraire les données [19.04 -> 03.05] 
+- Développement des scripts de scraping pour extraire les données [19.04 -> 03.05] 
 
-Nettoyage et prétraitement des données extraites [03.05 -> 10.05] 
+- Nettoyage et prétraitement des données extraites [03.05 -> 10.05] 
 
-Analyse exploratoire des données (tendances, corrélations, …) [10.05 -> 24.05] 
+- Analyse exploratoire des données (tendances, corrélations, …) [10.05 -> 24.05] 
 
-Implémentation des analyses statistiques et de clustering [24.05 -> 07.06] 
+- Implémentation des analyses statistiques et de clustering [24.05 -> 07.06] 
 
-Visualisation des résultats [31.05 -> 14.06] 
+- Visualisation des résultats [31.05 -> 14.06] 
 
 Raphaël (temps partiel) s’est occupé de scraper les données, le nettoyage et l’exploration des données ainsi que certaines visualisations pour la web app. 
 
 Tania (temps partiel) devait s’occuper de l’implémentation des analyses statistiques et clustering et certaines visualisations pour la web app. Cependant, nous avons plus eu de nouvelles de sa part depuis moins d’un mois et elle n’a donc rien fait pour ce projet. 
 
-Calvin (temps plein) c’est principalement occupé de la partie visualisation des données de la web app. 
+Calvin (temps plein) c’est principalement occupé de la partie visualisation des données de la web app.
+
+Le timing a été dans l'ensemble respecté. On a cependant pris du retard pour les deux dernières parties.
 ## Conclusion 
 Notre projet d'analyse des performances olympiques et des caractéristiques socio-économiques des pays participants aux Jeux Olympiques d'été a abouti à des découvertes fascinantes. Nous avons réussi à corréler des indicateurs tels que le PIB, l'indice de développement humain, et le coefficient de Gini avec les résultats sportifs, apportant ainsi une dimension plus profonde à l'analyse des performances olympiques. Nos visualisations dynamiques ont démontré que les pays avec des indicateurs socio-économiques supérieurs tendent à obtenir de meilleurs résultats, soulignant l'impact des ressources économiques et du développement humain sur les compétences sportives et les infrastructures. 
 ## Travail futur 
 Pour l'avenir, plusieurs améliorations et extensions de ce projet sont envisageables : 
 
-Extension des données et des éditions couvertes : Intégrer les Jeux Olympiques d'hiver pour une comparaison complète entre les éditions estivales et hivernales, permettant d'examiner des tendances plus globales à travers toutes les formes de Jeux Olympiques. 
+- Extension des données et des éditions couvertes : Intégrer les Jeux Olympiques d'hiver pour une comparaison complète entre les éditions estivales et hivernales, permettant d'examiner des tendances plus globales à travers toutes les formes de Jeux Olympiques. 
 
-Analyses plus poussées par sport : Bien que notre étude actuelle ne détaille pas les médailles par discipline, il serait enrichissant d'explorer les performances par sport pour déterminer si certains facteurs socio-économiques influencent spécifiquement certains types de disciplines. 
+- Analyses plus poussées par sport : Bien que notre étude actuelle ne détaille pas les médailles par discipline, il serait enrichissant d'explorer les performances par sport pour déterminer si certains facteurs socio-économiques influencent spécifiquement certains types de disciplines. 
 
-Modèles prédictifs : Développer des modèles prédictifs pour estimer les performances futures des pays aux Jeux Olympiques en utilisant des algorithmes de machine learning, basés sur des données historiques et des indicateurs socio-économiques. 
+- Modèles prédictifs : Développer des modèles prédictifs pour estimer les performances futures des pays aux Jeux Olympiques en utilisant des algorithmes de machine learning, basés sur des données historiques et des indicateurs socio-économiques. 
 
-Analyse historique plus poussée : Enrichissement des données avec des statistiques socio-économique historique des pays aurait permis une analyse historique plus poussé. 
+- Analyse historique plus poussée : Enrichissement des données avec des statistiques socio-économique historique des pays aurait permis une analyse historique plus poussé. 
 
-Visualisation plus attrayante : Rendre la visualisation plus attrayante en ajoutant des animations et des éléments décoratifs en rapport avec les jeux olympiques 
+- Visualisation plus attrayante : Rendre la visualisation plus attrayante en ajoutant des animations et des éléments décoratifs en rapport avec les jeux olympiques 
 
