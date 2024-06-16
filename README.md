@@ -1,1 +1,3 @@
-# WEM_JO
+# Analyse des performances sportives aux jeux olympiques 
+## Contexte 
+Avec l'approche des Jeux Olympiques d'été de cette année, un événement mondial qui se tient tous les quatre ans depuis 1896, notre projet s'est orienté vers une analyse approfondie de ce sujet. Nous avons choisi de nous concentrer sur les jeux d'été en raison de leur couverture médiatique plus importante et du nombre de pays participants, nettement supérieur à celui des jeux d'hiver (206 délégations en été 2021 contre 91 en hiver 2022). Cette décision nous offre l'accès à une plus grande diversité de données, ainsi qu'à un nombre d'épreuves considérablement plus élevé (339 épreuves en été 2021 contre 109 en hiver 2022).
