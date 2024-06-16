@@ -46,6 +46,13 @@ export function ColdWarChart(dataCountry, dataMedals) {
     ];
   }).flat();
 
+  // Trier les pays par ordre décroissant de médailles
+  aggregatedTotals.forEach((entry) => {
+    if (entry.countries) {
+      entry.countries.sort((a, b) => b.Total - a.Total);
+    }
+  });
+
   const width = 800;
   const height = 500;
   const marginTop = 100;
@@ -127,6 +134,24 @@ export function ColdWarChart(dataCountry, dataMedals) {
     aggregatedTotals.filter((d) => d.block === 'West'),
     (d) => d.totalMedal
   );
+
+  svg
+    .append('text')
+    .attr('x', width / 2)
+    .attr('y', height - 30) // Ajustez la position verticale pour éviter les chevauchements
+    .attr('font-family', 'Montserrat, sans-serif')
+    .attr('text-anchor', 'middle')
+    .attr('font-size', '12px')
+    .attr('fill', '#909190')
+    .text('In 1980, the Olympic Games took place in Moscow. The United States, along with around fifty other nations, ')
+    .append('tspan')
+    .attr('x', width / 2)
+    .attr('dy', '1.2em')
+    .text("boycotted these games due to the Soviet Union's invasion of Afghanistan.")
+    .append('tspan')
+    .attr('x', width / 2)
+    .attr('dy', '1.2em')
+    .text('In 1984, several Eastern Bloc countries in turn boycotted the Olympic Games held in Los Angeles.');
 
   svg
     .append('text')

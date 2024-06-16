@@ -95,6 +95,7 @@ h1 {
   align-items: center;
   width: 100%;
   height: 100%;}
+  #chartContainerMedals { height: 100%; width: 100%; float: none; display: block; margin: 10px ; align-items: center; }
 
        
         .info-button {
@@ -343,13 +344,29 @@ h1 {
     
 
     <div id="scatter-section" class="container">
-        <text class="section-title"><b>Finally, let's examine the correlations between the populations of countries and the number of medals won at the 2020 Olympic Games.</b></text>
+        <text class="section-title"><b>Finally, let's observe the socio-economic correlations of the 20 countries that won the most medals in 2020.</b></text>
     </div>    
 
-    <div id="scatter-plot-container" class="container">
+    <!-- <div id="scatter-plot-container" class="container">
         <svg id="scatter-plot"></svg>
-    </div>
+    </div> -->
 
+    <div id="medal-container" class="container">
+        <div id="chartContainerMedals" class="svg-container">
+            <button class="info-button" onclick="openInfoModal()">ℹ️</button>
+            <select id="dataSelect2" onchange="updateCountryMedalChart()">
+                <option value="PIB per capita">PIB per capita</option>
+                <option value="Gini coefficient">Gini coefficient</option>
+                <option value="Human Development Index">Human Development Index</option>
+                <option value="Total population">Total population</option>
+            </select>
+            <!-- <button id="resetButtonMedals" onclick="resetCountryMedalChart()">Reset</button> -->
+            <canvas id="chartCanvasMedals" ></canvas>
+            
+    </div>
+    <div id="governement-container" class="container">
+        <canvas id="chartCanvasGovernment"></canvas>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -415,6 +432,8 @@ sectionTitles.forEach(title => {
 });
 
 
+
+
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/d3@7/+esm"></script>
@@ -424,5 +443,6 @@ sectionTitles.forEach(title => {
     <script src="script.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="d3_script.js"></script>
+    <script src="countrymedalbar.js"></script>
 </body>
 </html>
