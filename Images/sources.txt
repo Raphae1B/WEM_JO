@@ -1,0 +1,111 @@
+"Fencing": "Images/fencing.jpg" :   	https://olympics.com/en/olympic-games/rio-2016
+
+"Aquatics": "Images/aquatics.jpg" : 	https://abcnews.go.com/Sports/photos/rio-olympics-2016-best-photos-day-41204336
+					https://www.nbclosangeles.com/news/sports/tokyo-summer-olympics/us-mens-water-polo-greece/2657887/
+					https://ftw.usatoday.com/gallery/tokyo-olympics-cool-synchronized-diving-photos
+					https://eu.coloradoan.com/story/sports/olympics/2021/08/04/artistic-swimming-2021-summer-olympics-tokyo-photos/5482775001/
+
+"Cycling": "Images/cycling.jpg" :       https://www.cyclingweekly.com/news/latest-news/cws-guide-to-track-racing-88054
+					https://www.digitalcycling.com.br/2016/09/01/entrevista-greg-van-avermaet-campeao-olimpico-de-estrada-2016/rio-2016-olympics-cycling-road-race-men-3/					https://olympics.com/en/olympic-games/rio-2016
+					https://olympic.ca/sports/mountain-bike/
+
+"Athletics": "Images/athletics.jpg" :	https://en.wikipedia.org/wiki/2012_in_athletics_(track_and_field)
+
+"Gymnastics": "Images/gymnastics.jpg" : https://www.liveabout.com/gymnastics-competitions-4688063
+					https://www.nbcolympics.com/news/gymnastics-101-apparatus-guide
+					https://www.pinterest.com/pin/fall-costs-us-gymnast-gold-medal--176555247862804538/
+					https://syndication.bleacherreport.com/amp/2656231-olympic-mens-gymnastics-2016-qualification-scores-results-and-reaction.amp.html
+"Rowing": "Images/rowing.jpg" : 	https://www.eurosport.com/
+
+"Wrestling": "Images/wrestling.jpg" : 	https://www.pinterest.com/pin/kyle-snyder-20-becomes-youngest-us-wrestler-to-win-olympic-gold--896568238328847385/
+
+"Football": "Images/football.jpg" :	https://www.boutique-box-internet.fr/actualites/pourquoi-regarder-mondial-foot-feminin/
+
+"Sailing": "Images/sailing.jpg" :	https://www.sailmagazine.com/racing/olympic-sailing-where-to-now
+
+"Shooting": "Images/shooting.jpg" : 	https://olympics.com/en/news/olympic-shooting-air-rifle-3-positions-rapid-fire-air-pistol-shotgun-trap-skeet
+
+"Boxing": "Images/boxing.jpg" : 	https://www.liveabout.com/boxing-olympic-rules-judging-and-officials-424010
+
+"Weightlifting": "Images/weightlifting.jpg" : https://www.huffpost.com/entry/photos-show-the-raw-power-of-olympic-women-team-usa-ftw_n_57979c7ee4b0d3568f84a7b0
+
+"Modern Pentathlon": "Images/modern_pentathlon.jpg" :   https://www.nytimes.com/2012/08/12/sports/olympics/modern-pentathlon-brings-a-day-of-madness-to-olympics.html
+							https://www.insidethegames.biz/articles/1111239/modpen-tokyo-2020
+							https://olympics.com/en/olympic-games/london-2012
+							https://www.nytimes.com/interactive/2021/08/06/sports/olympics/what-is-modern-pentathlon.html
+							https://olympics.com/en/olympic-games/beijing-2008
+
+"Equestrian": "Images/equestrian.jpg" : https://www.nippon.com/en/news/reu20210804KBN2F51EL/olympics-equestrian-britain%E2%80%99s-maher-jumps-to-gold-sweden-win-silver.html
+
+"Hockey": "Images/hockey.jpg" : 	https://olympique.ca/2016/07/22/du-hockey-lete-ca-existe/
+
+"Canoe": "Images/canoe.jpg" :		https://olympics.com/en/olympic-games/rio-2016
+
+"Basketball": "Images/basketball.jpg" : https://fansided.com/2016/08/08/olympics-mens-basketball-results-august-7th/
+
+"Archery": "Images/archery.jpg" : 	https://olympic.ca/sports/archery/
+
+"Tennis": "Images/tennis.jpg" : 	https://www.npr.org/sections/thetorch/2012/08/03/157982729/federer-wins-epic-semifinal-taking-more-than-four-hours-to-do-so
+
+"Volleyball": "Images/volleyball.jpg" : https://olympics.com/en/paris-2024/sports/volleyball
+
+"Judo": "Images/judo.jpg" :		https://www.ibtimes.co.uk/rio-olympics-judo-competition-all-you-need-know-ahead-event-1570862
+
+
+"Handball": "Images/handball.jpg" : 	https://olympics.com/en/paris-2024/sports/handball
+
+"Table Tennis": "Images/table_tennis.jpg" : https://www.olympics.com.au/sports/table-tennis/
+
+"Badminton": "Images/badminton.jpg" :	https://www.olympics.com.au/sports/badminton/
+
+"Baseball": "Images/baseball.jpg" : 	https://olympics.com/en/news/welcome-to-the-fascinating-world-of-baseball
+
+"Taekwondo": "Images/taekwondo.jpg" :	https://www.reuters.com/lifestyle/sports/taekwondo-korean-combat-sport-looks-put-best-foot-forward-2021-07-02/
+
+"Triathlon": "Images/triathlon.jpg" :	https://triathlonmagazine.ca/racing/olympic-triathlon-mens-preview-can-mislawchuk-and-sharpe-work-their-magic-again/
+					https://www.olympics.com.au/news/world-triathlon-series-kicks-off-in-abu-dhabi/
+					https://www.trifind.com/blog/must-knows-properly-transition-real-olympic-triathlete/
+
+"Rugby": "Images/rugby.jpg" :		https://www.reuters.com/lifestyle/sports/rugby-fiji-claim-gold-medal-olympic-rugby-sevens-2021-07-28/
+
+"Softball": "Images/softball.jpg" : 	https://www.rtl.fr/sport/autres-sports/jeux-olympiques-2021-qu-est-ce-que-le-softball-qui-revient-au-programme-7900055739
+
+"Tug-Of-War": "Images/tug_of_war.jpg" :	https://www.reddit.com/r/HistoryPorn/comments/ga5a6z/olympic_tug_of_war_the_united_states_and_great/?rdt=36801
+
+"Polo": "Images/polo.jpg" : 		https://www.pinterest.com/pin/730286895805959658/
+
+"Golf": "Images/golf.jpg" :		https://www.nbcolympics.com/news/golf-tokyo-olympics
+
+"Alpinism": "Images/alpinism.jpg" : 	https://www.massif-mont-blanc.com/photos/anciennes/alpinistes.php
+
+"Figure Skating": "Images/figure_skating.jpg" : https://www.reddit.com/r/TheWayWeWere/comments/2d46js/pairs_skating_at_the_1928_winter_olympics_st/
+
+"Lacrosse": "Images/lacrosse.jpg" : 	https://en.wikipedia.org/wiki/Lacrosse_at_the_Summer_Olympics
+
+"Sport Climbing": "Images/sport_climbing.jpg" : https://www.nbcphiladelphia.com/news/sports/tokyo-summer-olympics/sports-climbing-made-its-olympic-debut-how-is-it-scored/2911641/
+
+"Surfing": "Images/surfing.jpg" : 	https://www.surfertoday.com/surfing/the-qualified-surfers-for-the-tokyo-2020-olympics
+
+"Skateboarding": "Images/skateboarding.jpg" : https://www.insidethegames.biz/articles/1111250/tokyo-2020-skateboard-mens-park
+
+"Karate": "Images/karate.jpg" : 	https://apnews.com/article/2020-tokyo-olympics-entertainment-sports-middle-east-karate-1941257c0902f67a8685e1a6e00f36bb
+
+"Aeronautics": "Images/aeronautics.jpg" : https://www.olympedia.org/athletes/902123
+
+"Ice Hockey": "Images/ice_hockey.jpg" : https://www.vintag.es/2015/02/vintage-photos-of-winter-olympics-of.html
+
+"Roque": "Images/roque.jpg" : 		https://www.pinterest.com/pin/539798705320778967/
+
+"Jeu De Paume": "Images/jeu_de_paume.jpg" : https://www.pariszigzag.fr/insolite/histoire-insolite-paris/la-folle-histoire-du-jeu-de-paume-en-france
+
+"Racquets": "Images/racquets.jpg" :	https://www.yardbarker.com/general_sports/articles/sports_no_longer_in_the_summer_olympic_games/s1__21258490#slide_1
+
+"Motorboating": "Images/motorboating.jpg" : https://www.pinterest.com/pin/342977327855580089/
+
+"Cricket": "Images/cricket.jpg" : 	https://mysportsmovement.com/about-cricket/
+
+"Croquet": "Images/croquet.jpg" :	https://www.allposters.com/-sp/The-Croquet-Tournament-at-Southampton-1900-Posters_i15791804_.htm
+
+"Basque pelota": "Images/basque_pelota.jpg" : https://cartes-postales-anglet.com/produit/au-pays-basque-joueurs-de-pelote-a-chistera/
+
+"Art Competitions": "Images/art_competitions.jpg" : https://artclasscurator.com/olympic-art-competitions/
